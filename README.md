@@ -29,7 +29,7 @@ $ bundle install
 3. consumer_key等の設定をする．\_config.jsonをconfig.jsonとしてコピーし空欄を埋めること．
 
 ```
-$ cp \_config.json config.json
+$ cp _config.json config.json
 $ vim config.json
 ```
 
