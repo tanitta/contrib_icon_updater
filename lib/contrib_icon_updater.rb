@@ -22,13 +22,12 @@ class ContribIconUpdater
   end
 
   def contribution_level(color_code)
-    colors = {
+    {
       "#eeeeee" => 0,
       "#d6e685" => 1,
       "#8cc665" => 2,
       "#44a340" => 3,
       "#1e6823" => 4,
-    }
-    colors[color_code]
+    }[color_code]
   end
 end
