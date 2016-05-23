@@ -1,0 +1,8 @@
+#!/bin/sh
+# -*- ruby -*-
+exec ruby -x "$0" "$@"
+#!ruby
+
+require_relative '../lib/contrib_icon_updater'
+
+ContribIconUpdater.new.post_icon
