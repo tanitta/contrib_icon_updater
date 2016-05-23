@@ -2,8 +2,6 @@ require_relative './calendar'
 require 'twitter'
 require 'json'
 class ContribIconUpdater
-  attr_accessor :config
-
   def initialize
     @config = JSON::parse(File.read(File.expand_path("../../config.json", __FILE__)))
     user_name = @config["github"]["source_account"]
