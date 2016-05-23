@@ -1,40 +1,49 @@
 contrib_icon_updater
 ====
 
-# Description
+## Description
 
-twitterのユーザーアイコンをgithubのContribution Calendar（通称，草）の色に変更するやつ．
+twitterのユーザーアイコンをgithubのContribution Calendar（通称，草）の最新の色に変更するやつ．
 
-# Requirement 
+## Requirement 
 
 + gem
 + bundler
 
 
-# Usage
+## Usage
 
 1. cloneする．
 
-    $ git clone git@github.com:tanitta/contrib_icon_updater.git
+```
+$ git clone git@github.com:tanitta/contrib_icon_updater.git
+```
 
 2. bundle installする．
 
-    $ cd contrib_icon_updater
-    $ bundle install
+```
+$ cd contrib_icon_updater
+$ bundle install
+```
 
 3. consumer_key等の設定をする．\_config.jsonをconfig.jsonとしてコピーし空欄を埋めること．
 
-    $ cp \_config.json config.json
-    $ vim config.json
+```
+$ cp \_config.json config.json
+$ vim config.json
+```
 
 4. スクリプトを実行してtwitterのアイコンを変更する．
 
-    $ ruby bin/update_contrib_icon
-  
+```
+$ ruby bin/update_contrib_icon
+```
 permissionを設定するとインタプリタの指定無しで実行できるはず．
-
-    $ chmod 755 bin/update_contrib_icon # set permission
-    $ bin/update_contrib_icon
+```
+$ chmod 755 bin/update_contrib_icon # set permission
+$ bin/update_contrib_icon
+```
   
-# Option
+## Option
+
 画像はresourceの中に置いているので適宜差し替えたりしてください．
