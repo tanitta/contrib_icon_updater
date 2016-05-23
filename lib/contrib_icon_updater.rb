@@ -5,8 +5,7 @@ class ContribIconUpdater
   attr_accessor :config
 
   def initialize
-    @config = JSON::parse(File.read("config.json"))
-    
+    @config = JSON::parse(File.read(File.expand_path("../../config.json", __FILE__)))
     user_name = @config["github"]["source_account"]
     @calendar = Calendar.new(user_name)
     @client = Twitter::REST::Client.new do |config|
@@ -19,7 +18,8 @@ class ContribIconUpdater
 
   def post_icon
     icon_name = "icon#{ contribution_level( @calendar.latest_color ).to_s }.png"
-    icon = File.open("resource/" + icon_name, "r") 
+    icon = File.open(File.expand_path("../../resource/" + icon_name, __FILE__), "r") 
+    
     @client.update_profile_image(icon)
   end
 
