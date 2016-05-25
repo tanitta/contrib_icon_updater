@@ -30,7 +30,7 @@ class Calendar
     m
   end
   
-  def latest_activity
+  def latest_activities
     latest_node["data-count"].to_i
   end
   
@@ -38,7 +38,7 @@ class Calendar
     latest_node["fill"]
   end
   
-  def activity_on(date)
+  def activities_on(date)
     node_on(date)["data-count"].to_i
   end
   
@@ -54,13 +54,26 @@ class Calendar
     @contributions_array.last[1]
   end
   
-  def is_changed?
-    cacheed_activity = File.read(File.expand_path("../../cache", __FILE__)).to_i
-    latest_activity != cacheed_activity
+  def latest_date
+    @contributions_array.last[0]
   end
   
-  def save_latest_activity
-    File.open(File.expand_path("../../cache", __FILE__), "w") {|f| f.write latest_activity}
+  def annual_activities
+    @contributions_array.inject(0){|sum, elem| sum + elem[1]["data-count"].to_i}
+  end
+  
+  def is_changed?
+    cashed_params = File.read(File.expand_path("../../cache", __FILE__)).split
+    cached_activities = cashed_params[0].to_i
+    cached_date = DateTime.parse(cashed_params[1])
+    
+    latest_activities != cached_activities || latest_date!= cached_date
+  end
+  
+  def cache_change
+    File.open(File.expand_path("../../cache", __FILE__), "w") do |f|
+      f.write ( latest_activities.to_s + " " + latest_date.to_s)
+    end
   end
 end
 

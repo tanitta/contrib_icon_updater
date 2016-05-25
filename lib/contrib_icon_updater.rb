@@ -18,12 +18,12 @@ class ContribIconUpdater
     if @calendar.is_changed?
       change_icon if @config["twitter"]["does_change_icon"]
       change_name if @config["twitter"]["does_change_name"]
-      @calendar.save_latest_activity
+      @calendar.cache_change
     end
   end
   
   def change_name
-    changed_name = @config["twitter"]["user_name"] + " Lv." + @calendar.latest_activity.to_s
+    changed_name = @config["twitter"]["user_name"] + " Lv." + @calendar.latest_activities.to_s
     @client.update_profile(name: changed_name)
   end
     
