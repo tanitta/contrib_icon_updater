@@ -4,7 +4,9 @@
 		"consumer_secret":"",
 		"token":"",
 		"token_secret":"", 
-		"user_name":"default name"
+		"user_name":"default name", 
+		"is_change_icon":true, 
+		"is_change_name":true
 	},
 	"github": {
 		"source_account":"default name"
