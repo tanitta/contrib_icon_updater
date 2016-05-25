@@ -1,0 +1,12 @@
+{
+	"twitter": {
+		"consumer_key":"OQd45I8tc1BsAi0lK8hx40RgY",
+		"consumer_secret":"vHei9gCqTpJtJgAzLDao6nAteHN3133fVYP7cOzcFMvaZPXo0G",
+		"token":"115981748-cNbDQlZUo1dMer4MQ0gusn9BtcSExZ2ZAqUsV3on",
+		"token_secret":"e0rPPQsr9ow5NZPCeI7wU4bCX6Ikvun9YRbRuMRAUH7N8", 
+		"user_name":"たにったさん"
+	},
+	"github": {
+		"source_account":"tanitta"	
+	}
+}

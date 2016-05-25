@@ -13,8 +13,22 @@ class ContribIconUpdater
       config.access_token_secret = @config["twitter"]["token_secret"]
     end
   end
-
-  def post_icon
+  
+  def update
+    if @calendar.is_changed?
+      change_icon
+      change_name
+      @calendar.save_latest_activity
+    end
+  end
+  
+  def change_name
+    changed_name = @config["twitter"]["user_name"] + " Lv." + @calendar.latest_activity.to_s
+    
+    @client.update_profile(name: changed_name)
+  end
+    
+  def change_icon
     icon_name = "icon#{ contribution_level( @calendar.latest_color ).to_s }.png"
     icon = File.open(File.expand_path("../../resource/" + icon_name, __FILE__), "r") 
     

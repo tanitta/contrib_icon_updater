@@ -53,5 +53,14 @@ class Calendar
   def latest_node
     @contributions_array.last[1]
   end
+  
+  def is_changed?
+    cacheed_activity = File.read(File.expand_path("../../cache", __FILE__)).to_i
+    latest_activity != cacheed_activity
+  end
+  
+  def save_latest_activity
+    File.open(File.expand_path("../../cache", __FILE__), "w") {|f| f.write latest_activity}
+  end
 end
 
