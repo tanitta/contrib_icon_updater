@@ -5,4 +5,4 @@ exec ruby -x "$0" "$@"
 
 require_relative '../lib/contrib_icon_updater'
 
-ContribIconUpdater.new.post_icon
+ContribIconUpdater.new.update
