@@ -5,8 +5,8 @@
 		"token":"",
 		"token_secret":"", 
 		"user_name":"default name", 
-		"is_change_icon":true, 
-		"is_change_name":true
+		"does_change_icon":true, 
+		"does_change_name":true
 	},
 	"github": {
 		"source_account":"default name"

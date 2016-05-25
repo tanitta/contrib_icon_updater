@@ -16,8 +16,8 @@ class ContribIconUpdater
   
   def update
     if @calendar.is_changed?
-      change_icon if @config["twitter"]["is_change_icon"]
-      change_name if @config["twitter"]["is_change_name"]
+      change_icon if @config["twitter"]["does_change_icon"]
+      change_name if @config["twitter"]["does_change_name"]
       @calendar.save_latest_activity
     end
   end
