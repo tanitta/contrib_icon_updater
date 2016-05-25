@@ -3,9 +3,10 @@
 		"consumer_key":"",
 		"consumer_secret":"",
 		"token":"",
-		"token_secret":""
+		"token_secret":"", 
+		"user_name":"default name"
 	},
 	"github": {
-		"source_account":""	
+		"source_account":"default name"
 	}
 }
