@@ -32,7 +32,7 @@ twitterのユーザープロフィールをgithubのContribution Calendar（通�
 	```
 
 3. consumer_key等の設定を行います．`_config.json`を`config.json`としてコピーし空欄を埋めること．
-また，機能の切り替えは, `does_change_icon`, `does_change_name`フラグでそれぞれ指定ができます．
+また，機能の切り替えは, `enable_to_change_icon`, `enable_to_change_name`フラグでそれぞれ指定ができます．
 名前の変更機能を利用する場合，suffixが付与されるユーザー名を`user_name`に記入してください．
 
 	```
@@ -40,7 +40,7 @@ twitterのユーザープロフィールをgithubのContribution Calendar（通�
 	$ vim config.json
 	```
 
-4. スクリプトを実行してtwitterのプロフィールを変更する．
+4. スクリプトを実行してtwitterのプロフィールを変更．
 
 	```
 	$ ruby bin/update_contrib_icon
