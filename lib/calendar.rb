@@ -21,7 +21,7 @@ class Calendar
     response = http.request(request)
     doc = Nokogiri::HTML(response.body)
     
-    node_set = doc.search 'rect[class="day"]' 
+    node_set = doc.search 'rect[class="day"]' + doc.search 'rect[class="day active"]'
     m = {}
     node_set.each do |node|
       date = DateTime.parse(node["data-date"])
