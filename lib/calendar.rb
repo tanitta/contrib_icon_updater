@@ -27,6 +27,19 @@ class Calendar
       date = DateTime.parse(node["data-date"])
       m[date] = node
     end
+    
+    nowYear = DateTime.now.year
+    nowMonth = DateTime.now.month
+    nowDay = DateTime.now.day
+    nowStr = "#{ nowYear }-#{nowMonth}-#{nowDay}"
+    nowDate= DateTime.parse(nowStr) 
+    
+    if !m.has_key? nowDate
+      yesterday = nowDate-1
+      m[nowDate] = m[yesterday]
+      m[nowDate]["data-count"] = "0"
+      m[nowDate]["data-date"] = nowStr
+    end
     m
   end
   
