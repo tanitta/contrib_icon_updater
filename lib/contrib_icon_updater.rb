@@ -22,6 +22,7 @@ class ContribIconUpdater
     end
   end
   
+  private
   def change_name
     changed_name = @config["twitter"]["user_name"] + " Lv." + @calendar.annual_activities.to_s
     @client.update_profile(name: changed_name)
