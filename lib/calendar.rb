@@ -38,6 +38,7 @@ class Calendar
       yesterday = nowDate-1
       m[nowDate] = m[yesterday]
       m[nowDate]["data-count"] = "0"
+      m[nowDate]["fill"] = "#eeeeee"
       m[nowDate]["data-date"] = nowStr
     end
     m
